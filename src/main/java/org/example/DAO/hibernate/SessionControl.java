@@ -12,12 +12,8 @@ public class SessionControl implements ISessionControl {
     public Session startSession() {
         if (session == null) {
             SessionFactory factory;
-            if (GetPath.path1.contains("D:\\")) {
                 factory = new Configuration().configure("hibernate.cfg_win.xml").buildSessionFactory();
-            }
-            else{
-                factory = new Configuration().configure("hibernate.cfg_linux.xml").buildSessionFactory();
-            }
+
 
             Session session = factory.openSession();
             session.beginTransaction();
